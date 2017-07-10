@@ -1,0 +1,28 @@
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      logFormat: "%d [%thread] %-5level %c{15} - [%X{X-Transaction-Key} - %X{X-Request-Key}] - %msg%n%rEx"
+
+server:
+  adminConnectors:
+    -
+      port: 5001
+      type: http
+  adminContextPath: /admin
+  applicationConnectors:
+    -
+      port: 5000
+      type: http
+  rootPath: /dropwizard/*
+  type: default
+
+databaseConfig:
+  dbUrl: jdbc:mysql://localhost:3306/dropwizard_dummy?autoReconnect=true
+  dbUser: root
+  dbPassword: root
+  idleConnectionTestPeriod: 100
+  testConnectionOnCheckin: true
+  testConnectionOnCheckout: true
