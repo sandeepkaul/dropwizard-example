@@ -20,7 +20,7 @@ server:
   type: default
 
 databaseConfig:
-  dbUrl: jdbc:mysql://localhost:3306/dropwizard_dummy?autoReconnect=true
+  dbUrl: jdbc:mysql://localhost:3306/target?autoReconnect=true
   dbUser: root
   dbPassword: root
   idleConnectionTestPeriod: 100
